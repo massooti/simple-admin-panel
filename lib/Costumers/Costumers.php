@@ -21,13 +21,16 @@ class Costumers
     public function setOrderingValues()
     {
         $ordering = [
-            'id' => 'ID',
-            'f_name' => 'First Name',
-            'l_name' => 'Last Name',
-            'gender' => 'Gender',
-            'phone' => 'Phone',
-            'created_at' => 'Created at',
-            'updated_at' => 'Updated at'
+            'id' => 'شناسه',
+            'f_name' => 'نام',
+            'l_name' => 'نام خانوادگی',
+            // 'gender' => 'جنسیت',
+            // 'phone' => 'موبایل',
+            // 'created_at' => 'تاریخ ایجاد',
+            // 'updated_at' => 'تاریخ بروز رسانی',
+            // 'father' => 'نام پدر',
+            // 'code',
+            // 'tel'
         ];
 
         return $ordering;

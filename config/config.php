@@ -16,10 +16,10 @@ require_once BASE_PATH . '/helpers/helpers.php';
 |--------------------------------------------------------------------------
  */
 
-define('DB_HOST', "localhost");
+define('DB_HOST', "127.0.0.1");
 define('DB_USER', "root");
-define('DB_PASSWORD', "root");
-define('DB_NAME', "corephpadmin");
+define('DB_PASSWORD', "2023");
+define('DB_NAME', "admin_db");
 
 /**
  * Get instance of DB object

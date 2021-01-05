@@ -71,11 +71,11 @@ include BASE_PATH.'/includes/header.php';
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-6">
-            <h1 class="page-header">Admin users</h1>
+            <h1 class="page-header">کاربران</h1>
         </div>
         <div class="col-lg-6">
             <div class="page-action-links text-right">
-                <a href="add_admin.php" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add new</a>
+                <a href="add_admin.php" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> ایجاد کاربر جدید</a>
             </div>
         </div>
     </div>
@@ -91,9 +91,9 @@ include BASE_PATH.'/includes/header.php';
     <!-- Filters -->
     <div class="well text-center filter-form">
         <form class="form form-inline" action="">
-            <label for="input_search">Search</label>
+            <label for="input_search">جستجو</label>
             <input type="text" class="form-control" id="input_search" name="search_string" value="<?php echo htmlspecialchars($search_string, ENT_QUOTES, 'UTF-8'); ?>">
-            <label for="input_order">Order By</label>
+            <label for="input_order">بر اساس</label>
             <select name="filter_col" class="form-control">
                 <?php
                 foreach ($users->setOrderingValues() as $opt_value => $opt_name):
@@ -107,14 +107,14 @@ include BASE_PATH.'/includes/header.php';
                 if ($order_by == 'Asc') {
                     echo 'selected';
                 }
-                ?> >Asc</option>
+                ?> >جدیدترین ها</option>
                 <option value="Desc" <?php
                 if ($order_by == 'Desc') {
                     echo 'selected';
                 }
-                ?>>Desc</option>
+                ?>>قدیمی ترین ها</option>
             </select>
-            <input type="submit" value="Go" class="btn btn-primary">
+            <input type="submit" value="جستجو" class="btn btn-primary">
         </form>
     </div>
     <hr>
@@ -124,10 +124,10 @@ include BASE_PATH.'/includes/header.php';
     <table class="table table-striped table-bordered table-condensed">
         <thead>
             <tr>
-                <th width="5%">ID</th>
-                <th width="45%">Name</th>
-                <th width="40%">Admin type</th>
-                <th width="10%">Actions</th>
+                <th width="5%">شناسه</th>
+                <th width="45%">نام</th>
+                <th width="40%">نقش</th>
+                <th width="10%">عملیات</th>
             </tr>
         </thead>
         <tbody>
@@ -135,7 +135,8 @@ include BASE_PATH.'/includes/header.php';
             <tr>
                 <td><?php echo $row['id']; ?></td>
                 <td><?php echo htmlspecialchars($row['user_name']); ?></td>
-                <td><?php echo htmlspecialchars($row['admin_type']); ?></td>
+                <td><?php  echo ($row['admin_type'] == 'super') ? 'مدیر کل' :  'کاربر';
+                ?></td>
                 <td>
                     <a href="edit_admin.php?admin_user_id=<?php echo $row['id']; ?>&operation=edit" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
                     <a href="#" class="btn btn-danger delete_btn" data-toggle="modal" data-target="#confirm-delete-<?php echo $row['id']; ?>"><i class="glyphicon glyphicon-trash"></i></a>
@@ -149,15 +150,15 @@ include BASE_PATH.'/includes/header.php';
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Confirm</h4>
+                                <h4 class="modal-title">ثبت</h4>
                             </div>
                             <div class="modal-body">
                                 <input type="hidden" name="del_id" id="del_id" value="<?php echo $row['id']; ?>">
-                                <p>Are you sure you want to delete this row?</p>
+                                <p>آیا از حذف این کاربر اطمینان دارید؟</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-default pull-left">Yes</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-default pull-left">بله</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">خیر</button>
                             </div>
                         </div>
                     </form>

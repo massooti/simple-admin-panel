@@ -21,9 +21,9 @@ class Users
     public function setOrderingValues()
     {
         $ordering = [
-            'id' => 'ID',
-            'user_name' => 'User Name',
-            'admin_type' => 'Admin Type'
+            'id' => 'شناسه',
+            'user_name' => 'نام کاریری',
+            'admin_type' => 'نقش'
         ];
 
         return $ordering;

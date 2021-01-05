@@ -4,7 +4,7 @@ require_once './config/config.php';
 require_once 'includes/auth_validate.php';
 
 //Only super admin is allowed to access this page
-if ($_SESSION['admin_type'] !== 'super') {
+if ($_SESSION['admin_type'] !== 'مدیر') {
     // show permission denied message
     echo 'Permission Denied';
     exit();
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $db->get('admin_accounts');
     
     if($db->count >=1){
-        $_SESSION['failure'] = "User name already exists";
+        $_SESSION['failure'] = "کاربری با این مشخصات قبلا ثبت شده";
         header('location: add_admin.php');
         exit();
     }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if($last_id)
     {
 
-    	$_SESSION['success'] = "Admin user added successfully!";
+    	$_SESSION['success'] = "کاربر با موفقیت ایجاد شد";
     	header('location: admin_users.php');
     	exit();
     }  
@@ -48,7 +48,7 @@ require_once 'includes/header.php';
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Add User</h2>
+			<h2 class="page-header">ایجاد کاربر جدید</h2>
 		</div>
 	</div>
 	 <?php 

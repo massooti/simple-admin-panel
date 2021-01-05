@@ -1,35 +1,44 @@
 <fieldset>
     <div class="form-group">
-        <label for="f_name">First Name *</label>
-          <input type="text" name="f_name" value="<?php echo htmlspecialchars($edit ? $customer['f_name'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="First Name" class="form-control" required="required" id = "f_name" >
+        <label for="f_name"> نام *</label>
+          <input type="text" name="f_name" value="<?php echo htmlspecialchars($edit ? $customer['f_name'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="نام" class="form-control" required="required" id = "f_name" >
     </div> 
 
     <div class="form-group">
-        <label for="l_name">Last name *</label>
-        <input type="text" name="l_name" value="<?php echo htmlspecialchars($edit ? $customer['l_name'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="Last Name" class="form-control" required="required" id="l_name">
+        <label for="l_name">نام خانوادگی *</label>
+        <input type="text" name="l_name" value="<?php echo htmlspecialchars($edit ? $customer['l_name'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="نام خانوادگی" class="form-control" required="required" id="l_name">
+    </div> 
+    <div class="form-group">
+        <label for="l_name">نام پدر *</label>
+        <input type="text" name="father" value="<?php echo htmlspecialchars($edit ? $customer['father'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="نام پدر" class="form-control" required="required" id="father">
     </div> 
 
     <div class="form-group">
-        <label>Gender * </label>
+        <label for="l_name">کد ملی *</label>
+        <input type="number" name="code" value="<?php echo htmlspecialchars($edit ? $customer['code'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="کد ملی" class="form-control" required="required" id="code">
+    </div> 
+
+    <div class="form-group">
+        <label>جنسیت * </label>
         <label class="radio-inline">
-            <input type="radio" name="gender" value="male" <?php echo ($edit &&$customer['gender'] =='male') ? "checked": "" ; ?> required="required"/> Male
+            <input type="radio" name="gender" value="مرد" <?php echo ($edit &&$customer['gender'] =='male') ? "checked": "" ; ?> required="required"/> مرد
         </label>
         <label class="radio-inline">
-            <input type="radio" name="gender" value="female" <?php echo ($edit && $customer['gender'] =='female')? "checked": "" ; ?> required="required" id="female"/> Female
+            <input type="radio" name="gender" value="زن" <?php echo ($edit && $customer['gender'] =='female')? "checked": "" ; ?> required="required" id="female"/> زن
         </label>
     </div>
 
     <div class="form-group">
-        <label for="address">Address</label>
+        <label for="address">آدرس</label>
           <textarea name="address" placeholder="Address" class="form-control" id="address"><?php echo htmlspecialchars(($edit) ? $customer['address'] : '', ENT_QUOTES, 'UTF-8'); ?></textarea>
     </div> 
     
     <div class="form-group">
-        <label>State </label>
-           <?php $opt_arr = array("Maharashtra", "Kerala", "Madhya pradesh"); 
+        <label>استان </label>
+           <?php $opt_arr = array("تهران", "شیراز", "اصفهان"); 
                             ?>
             <select name="state" class="form-control selectpicker" required>
-                <option value=" " >Please select your state</option>
+                <option value=" " >استان شهر خود را انتخاب کنید</option>
                 <?php
                 foreach ($opt_arr as $opt) {
                     if ($edit && $opt == $customer['state']) {
@@ -43,23 +52,22 @@
                 ?>
             </select>
     </div>  
+  
     <div class="form-group">
-        <label for="email">Email</label>
-            <input  type="email" name="email" value="<?php echo htmlspecialchars($edit ? $customer['email'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="E-Mail Address" class="form-control" id="email">
-    </div>
-
-    <div class="form-group">
-        <label for="phone">Phone</label>
+        <label for="phone">موبایل</label>
             <input name="phone" value="<?php echo htmlspecialchars($edit ? $customer['phone'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="987654321" class="form-control"  type="text" id="phone">
     </div> 
-
     <div class="form-group">
-        <label>Date of birth</label>
-        <input name="date_of_birth" value="<?php echo htmlspecialchars($edit ? $customer['date_of_birth'] : '', ENT_QUOTES, 'UTF-8'); ?>"  placeholder="Birth date" class="form-control"  type="date">
+        <label for="phone">تلفن ثابت</label>
+            <input name="tel" value="<?php echo htmlspecialchars($edit ? $customer['tel'] : '', ENT_QUOTES, 'UTF-8'); ?>" placeholder="021334698" class="form-control"  type="text" id="tel">
+    </div> 
+    <div class="form-group">
+        <label>تاریخ تولد</label>
+        <input name="date_of_birth" value="<?php echo htmlspecialchars($edit ? $customer['date_of_birth'] : '', ENT_QUOTES, 'UTF-8'); ?>"  placeholder="تاریخ تولد" class="form-control"  type="date">
     </div>
 
     <div class="form-group text-center">
         <label></label>
-        <button type="submit" class="btn btn-warning" >Save <span class="glyphicon glyphicon-send"></span></button>
+        <button type="submit" class="btn btn-warning" >ذخیره <span class="glyphicon glyphicon-send"></span></button>
     </div>            
 </fieldset>

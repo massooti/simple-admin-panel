@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     if($stat)
     {
-        $_SESSION['success'] = "Customer updated successfully!";
+        $_SESSION['success'] = "گواهینامه با موفقیت ویرایش گردید";
         //Redirect to the listing page,
         header('location: customers.php');
         //Important! Don't execute the rest put the exit/die. 
@@ -50,7 +50,7 @@ if($edit)
 ?>
 <div id="page-wrapper">
     <div class="row">
-        <h2 class="page-header">Update Customer</h2>
+        <h2 class="page-header">ویرایش گواهینامه</h2>
     </div>
     <!-- Flash messages -->
     <?php

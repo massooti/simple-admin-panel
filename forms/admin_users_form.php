@@ -3,7 +3,7 @@
     <legend>Add new admin user</legend>
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label">User name</label>
+        <label class="col-md-4 control-label">نام کاربری</label>
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -13,7 +13,7 @@
     </div>
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" >Password</label>
+        <label class="col-md-4 control-label" >رمز عبور</label>
         <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -23,17 +23,17 @@
     </div>
     <!-- radio checks -->
     <div class="form-group">
-        <label class="col-md-4 control-label">User type</label>
+        <label class="col-md-4 control-label">نقش کاربر</label>
         <div class="col-md-4">
             <div class="radio">
                 <label>
                     <?php //echo $admin_account['admin_type'] ?>
-                    <input type="radio" name="admin_type" value="super" required="" <?php echo ($edit && $admin_account['admin_type'] =='super') ? "checked": "" ; ?>/> Super admin
+                    <input type="radio" name="admin_type" value="super" required="" <?php echo ($edit && $admin_account['admin_type'] =='super') ? "checked": "" ; ?>/> مدیر کل
                 </label>
             </div>
             <div class="radio">
                 <label>
-                    <input type="radio" name="admin_type" value="admin" required="" <?php echo ($edit && $admin_account['admin_type'] =='admin') ? "checked": "" ; ?>/> Admin
+                    <input type="radio" name="admin_type" value="admin" required="" <?php echo ($edit && $admin_account['admin_type'] =='admin') ? "checked": "" ; ?>/> کاربر 
                 </label>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-4">
-            <button type="submit" class="btn btn-warning" >Save <span class="glyphicon glyphicon-send"></span></button>
+            <button type="submit" class="btn btn-warning" >ذخیره <span class="glyphicon glyphicon-send"></span></button>
         </div>
     </div>
 </fieldset>

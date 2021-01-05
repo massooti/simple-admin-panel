@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
     if($last_id)
     {
-    	$_SESSION['success'] = "Customer added successfully!";
+    	$_SESSION['success'] = "گواهینامه با موفقیت ثبت شد";
     	header('location: customers.php');
     	exit();
     }
@@ -37,7 +37,7 @@ require_once 'includes/header.php';
 <div id="page-wrapper">
 <div class="row">
      <div class="col-lg-12">
-            <h2 class="page-header">Add Customers</h2>
+            <h2 class="page-header">ایجاد پرونده جدید</h2>
         </div>
         
 </div>

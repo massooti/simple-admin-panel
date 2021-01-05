@@ -58,11 +58,11 @@ include BASE_PATH . '/includes/header.php';
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-6">
-            <h1 class="page-header">Customers</h1>
+            <h1 class="page-header">مشتریان</h1>
         </div>
         <div class="col-lg-6">
             <div class="page-action-links text-right">
-                <a href="add_customer.php?operation=create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add new</a>
+                <a href="add_customer.php?operation=create" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> ایجاد گواهینامه جدید</a>
             </div>
         </div>
     </div>
@@ -71,9 +71,9 @@ include BASE_PATH . '/includes/header.php';
     <!-- Filters -->
     <div class="well text-center filter-form">
         <form class="form form-inline" action="">
-            <label for="input_search">Search</label>
+            <label for="input_search">جستجو</label>
             <input type="text" class="form-control" id="input_search" name="search_string" value="<?php echo xss_clean($search_string); ?>">
-            <label for="input_order">Order By</label>
+            <label for="input_order">مرتب کردن</label>
             <select name="filter_col" class="form-control">
                 <?php
 foreach ($costumers->setOrderingValues() as $opt_value => $opt_name):
@@ -87,14 +87,14 @@ endforeach;
 if ($order_by == 'Asc') {
 	echo 'selected';
 }
-?> >Asc</option>
+?> >جدیدترین ها</option>
                 <option value="Desc" <?php
 if ($order_by == 'Desc') {
 	echo 'selected';
 }
-?>>Desc</option>
+?>>قدیمی ترین ها</option>
             </select>
-            <input type="submit" value="Go" class="btn btn-primary">
+            <input type="submit" value="جستجو" class="btn btn-primary">
         </form>
     </div>
     <hr>
@@ -102,18 +102,18 @@ if ($order_by == 'Desc') {
 
 
     <div id="export-section">
-        <a href="export_customers.php"><button class="btn btn-sm btn-primary">Export to CSV <i class="glyphicon glyphicon-export"></i></button></a>
+        <a href="export_customers.php"><button class="btn btn-sm btn-primary">دریافت فایل CSV <i class="glyphicon glyphicon-export"></i></button></a>
     </div>
 
     <!-- Table -->
     <table class="table table-striped table-bordered table-condensed">
         <thead>
             <tr>
-                <th width="5%">ID</th>
-                <th width="45%">Name</th>
-                <th width="20%">Gender</th>
-                <th width="20%">Phone</th>
-                <th width="10%">Actions</th>
+                <th width="5%">شناسه</th>
+                <th width="45%">نام</th>
+                <th width="20%">جنسیت</th>
+                <th width="20%">شماره همراه</th>
+                <th width="10%">عملیات</th>
             </tr>
         </thead>
         <tbody>
@@ -136,15 +136,15 @@ if ($order_by == 'Desc') {
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Confirm</h4>
+                                <h4 class="modal-title">ثبت</h4>
                             </div>
                             <div class="modal-body">
                                 <input type="hidden" name="del_id" id="del_id" value="<?php echo $row['id']; ?>">
-                                <p>Are you sure you want to delete this row?</p>
+                                <p>آیا از حذف این سند اطمینان دارید؟</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-default pull-left">Yes</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-default pull-left">بله</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">خیر</button>
                             </div>
                         </div>
                     </form>

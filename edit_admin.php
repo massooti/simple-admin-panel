@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	if (!empty($row['user_name'])) {
 
-		$_SESSION['failure'] = "User name already exists";
+		$_SESSION['failure'] = "کاربری با این مشخصات قبلا ثبت شده";
 
 		$query_string = http_build_query(array(
 			'admin_user_id' => $admin_user_id,
@@ -48,9 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$stat = $db->update('admin_accounts', $data_to_update);
 
 	if ($stat) {
-		$_SESSION['success'] = "Admin user has been updated successfully";
+		$_SESSION['success'] = "این کاربر با موفقیت ثبت گردید";
 	} else {
-		$_SESSION['failure'] = "Failed to update Admin user : " . $db->getLastError();
+		$_SESSION['failure'] = "خطا در ویرایش کاربر : " . $db->getLastError();
 	}
 
 	header('location: admin_users.php');
@@ -73,7 +73,7 @@ require_once 'includes/header.php';
 
     <div class="row">
      <div class="col-lg-12">
-            <h2 class="page-header">Update User</h2>
+            <h2 class="page-header">ویرایش کاربر</h2>
         </div>
 
     </div>
