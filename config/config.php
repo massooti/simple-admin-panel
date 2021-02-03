@@ -17,13 +17,14 @@ require_once BASE_PATH . '/helpers/helpers.php';
  */
 
 define('DB_HOST', "127.0.0.1");
-define('DB_USER', "root");
-define('DB_PASSWORD', "2023");
-define('DB_NAME', "admin_db");
+define('DB_USER', "massoud");
+define('DB_PASSWORD', "pcKavano");
+define('DB_NAME', "simple_db");
 
 /**
  * Get instance of DB object
  */
-function getDbInstance() {
+function getDbInstance()
+{
 	return new MysqliDb(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 }

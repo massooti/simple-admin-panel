@@ -8,7 +8,7 @@ require_once 'includes/auth_validate.php';
 $db = getDbInstance();
 
 //Get Dashboard information
-$numCustomers = $db->getValue ("customers", "count(*)");
+$numCustomers = $db->getValue("customers", "count(*)");
 
 include_once('includes/header.php');
 ?>
@@ -29,9 +29,9 @@ include_once('includes/header.php');
                             <i class="fa fa-user fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php 
-                            echo counter('admin_accounts');
-                            ?></div>
+                            <div class="huge"><?php
+                                                echo counter('admin_accounts');
+                                                ?></div>
                             <div>کاربران</div>
                         </div>
                     </div>
@@ -53,9 +53,9 @@ include_once('includes/header.php');
                             <i class="fa fa-tasks fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php 
-                            echo counter('customers');
-                            ?></div>
+                            <div class="huge"><?php
+                                                echo counter('customers');
+                                                ?></div>
                             <div>!لیست پرونده ها </div>
                         </div>
                     </div>
@@ -70,26 +70,13 @@ include_once('includes/header.php');
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-        
+
         </div>
         <div class="col-lg-3 col-md-6">
-            
+
         </div>
     </div>
     <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-8">
-
-
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-
-            <!-- /.panel .chat-panel -->
-        </div>
-        <!-- /.col-lg-4 -->
-    </div>
     <!-- /.row -->
 </div>
 <!-- /#page-wrapper -->
